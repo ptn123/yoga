@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Bliss</title>
+    <style>
+        /* Reset and Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            color: #fff;
+            background: #121212;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .hero-overlay h1, .hero-overlay p {
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+        .hero-overlay h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero-overlay p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .hero-overlay p:nth-child(2) {
+            animation-delay: 1s;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+            background: #1c1c1c;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Video -->
+    <section class="hero">
+        <video src="path-to-your-video.mp4" autoplay loop muted></video>
+        <div class="hero-overlay">
+            <h1>Experience Serenity</h1>
+            <p>Find Your Inner Peace</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <img src="yoga-image1.jpg" alt="Yoga Pose 1">
+        <img src="yoga-image2.jpg" alt="Yoga Pose 2">
+        <img src="yoga-image3.jpg" alt="Yoga Pose 3">
+        <img src="yoga-image4.jpg" alt="Yoga Pose 4">
+        <img src="yoga-image5.jpg" alt="Yoga Pose 5">
+        <img src="yoga-image6.jpg" alt="Yoga Pose 6">
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Yoga Bliss. All rights reserved.</p>
+    </footer>
+</body>
+</html>

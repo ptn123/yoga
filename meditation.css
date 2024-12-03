@@ -1,0 +1,283 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    margin: 0;
+    background: linear-gradient(to right, #434343, #000000);
+    overflow-x: hidden;
+    transition: background 1s ease-in-out;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    background: url('images/meditation_bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header h1, .header p {
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    transition: color 1s ease-in-out;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f5a623;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.7em;
+    color: #ddd;
+}
+
+.benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.benefit-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.benefit-box:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.benefit-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.benefit-box h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #f5a623;
+}
+
+.techniques ul {
+    list-style: none;
+    padding: 0;
+}
+
+.techniques ul li {
+    font-size: 1.2em;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    color: #ddd;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.guided-meditation button {
+    background: linear-gradient(45deg, #f5a623, #f5a623);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guided-meditation button:hover {
+    transform: scale(1.1);
+    background-color: #e0941f;
+}
+
+.guided-meditation button:focus {
+    outline: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #aaa;
+    position: relative;
+}
+
+.quote {
+    font-style: italic;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+#meditation-environment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/meditation_environment.jpg') no-repeat center center/cover;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
+}
+
+#meditation-environment.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.meditation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-family: 'Crimson Pro', serif;
+}
+
+.meditation-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.meditation-content p {
+    font-size: 1.5em;
+    max-width: 800px;
+    text-align: center;
+}
+
+.meditation-content .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+}
+
+.meditation-content .effect.active {
+    opacity: 1;
+}
+/* Existing styles */
+
+.words-of-wisdom {
+    background: rgba(34, 34, 34, 0.85);
+    padding: 40px 20px;
+    text-align: center;
+    color: #f5f5f5;
+    font-family: 'Crimson Pro', serif;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.words-of-wisdom h2 {
+    font-size: 2.5em;
+    color: #f5a623;
+    margin-bottom: 20px;
+}
+
+.words-of-wisdom blockquote {
+    font-size: 1.5em;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #ddd;
+    font-style: italic;
+    line-height: 1.6em;
+    border-left: 5px solid #f5a623;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* Rest of the CSS remains unchanged */
+/* Existing styles remain unchanged */
+
+.meditation-environment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.meditation-environment.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.helical-shape {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top: 8px solid #f5a623;
+    animation: spin 4s linear infinite;
+    position: relative;
+    margin-top: 50px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Additional effect for visual appeal */
+.effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    mix-blend-mode: overlay;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}

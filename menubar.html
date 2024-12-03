@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #ffeb3b;
+        }
+
+        .dropdown {
+            margin-bottom: 10px;
+        }
+
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            background: #444;
+            border: none;
+            color: #fff;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            background: #333;
+            padding: 10px;
+        }
+
+        .dropdown-content p {
+            margin: 0;
+        }
+
+        .dropdown button:after {
+            content: ' ▼';
+        }
+
+        .dropdown.open button:after {
+            content: ' ▲';
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>Frequently Asked Questions</h3>
+    <div class="dropdown">
+        <button onclick="toggleDropdown(this)">What is Yoga?</button>
+        <div class="dropdown-content">
+            <p>Yoga is an ancient practice that involves physical postures, breath control, and meditation. It aims to improve flexibility, strength, and overall well-being. Yoga has been practiced for thousands of years and is known for its numerous benefits, including stress reduction, increased focus, and better physical health.</p>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="toggleDropdown(this)">Why should we do Yoga?</button>
+        <div class="dropdown-content">
+            <p>Yoga offers a range of benefits, including improved flexibility, strength, balance, and mental clarity. It can help reduce stress, enhance concentration, and contribute to overall well-being. Regular practice can lead to a healthier lifestyle and a more balanced approach to life.</p>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="toggleDropdown(this)">What is the advantage of Yoga over physical exercises?</button>
+        <div class="dropdown-content">
+            <p>Yoga combines physical exercise with mental and emotional well-being practices. Unlike traditional physical exercises, yoga focuses on the integration of body, mind, and spirit. It promotes relaxation, improves posture, and enhances overall health through mindful movement and breath control.</p>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown(button) {
+            var dropdown = button.parentElement;
+            dropdown.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
+s

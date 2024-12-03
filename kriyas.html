@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriya Yoga</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f0f4f8, #dfe9f3);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://source.unsplash.com/1600x900/?meditation,yoga') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .content-text h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 4px solid #ff7518;
+            padding-bottom: 10px;
+        }
+
+        .content-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-text li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .content-text li::before {
+            content: '•';
+            color: #ff7518;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.5em;
+        }
+
+        .content-image {
+            flex: 0 0 250px;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff7518, #ff5722);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #ff5722, #ff7518);
+            transform: scale(1.05);
+        }
+
+        .cta-button:focus {
+            outline: none;
+        }
+
+        .caution {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe3e3;
+            border-left: 5px solid #ff4d4d;
+            border-radius: 8px;
+            color: #d8000c;
+            font-size: 1.1em;
+        }
+
+        .accordion {
+            margin-top: 20px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-title {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .accordion-title:hover {
+            background: #e0e0e0;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background: #fff;
+        }
+
+        .accordion-content p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .content-text h2 {
+                font-size: 1.8em;
+            }
+
+            .content-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .content-image {
+                margin-top: 20px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Kriya Yoga</h1>
+        <p>Transform Your Mind and Body</p>
+    </section>
+
+    <section class="content-container">
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Introduction to Kriya Yoga</h2>
+                <p>Kriya Yoga is an ancient practice designed to accelerate spiritual growth and transformation. It involves a combination of techniques including breathing exercises, meditation, and physical practices aimed at enhancing overall well-being and achieving higher states of consciousness.</p>
+            </div>
+            <img src="https://source.unsplash.com/250x250/?meditation" alt="Kriya Yoga Introduction" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Neti</h2>
+                <p><strong>Description:</strong> Neti is a practice for cleansing the nasal passages, which helps in improving respiratory health and mental clarity.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Jala Neti:</strong> Rinsing the nasal passages with a saline solution using a Neti pot.</li>
+                        <li><strong>Ghee Neti:</strong> Applying ghee to the nasal passages to soothe and lubricate.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Enhances respiratory function and clears sinus congestion.</li>
+                        <li>Improves mental focus and clarity.</li>
+                        <li>Reduces symptoms of allergies and nasal dryness.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Avoid Neti if you have severe nasal congestion or sinus infections. Consult a healthcare professional before starting any new practice.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Neti</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Fill a Neti pot with a saline solution.</p>
+                            <p><strong>Step 2:</strong> Tilt your head to one side over a sink.</p>
+                            <p><strong>Step 3:</strong> Insert the spout of the Neti pot into the upper nostril.</p>
+                            <p><strong>Step 4:</strong> Pour the solution into the nostril, allowing it to flow through and out the other nostril.</p>
+                            <p><strong>Step 5:</strong> Repeat on the other side.</p>
+                            <p><strong>Step 6:</strong> Blow your nose gently to clear any remaining solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="neti.jpg" alt="Neti Kriya" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Dhauti</h2>
+                <p><strong>Description:</strong> Dhauti involves techniques for cleansing the digestive tract and removing toxins from the body.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Vamana Dhauti:</strong> Drinking a large quantity of water and then inducing vomiting to cleanse the stomach.</li>
+                        <li><strong>Vastra Dhauti:</strong> Swallowing a long cloth and then retrieving it to cleanse the digestive tract.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Detoxifies the digestive system and improves digestion.</li>
+                        <li>Clears excess mucus and toxins from the body.</li>
+                        <li>Enhances overall vitality and energy levels.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Dhauti should be performed under the guidance of an experienced practitioner. It may not be suitable for individuals with digestive disorders or sensitivity.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Dhauti</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Prepare a clean cloth or water for the practice.</p>
+                            <p><strong>Step 2:</strong> If performing Vamana Dhauti, drink a large quantity of lukewarm water.</p>
+                            <p><strong>Step 3:</strong> Induce vomiting to expel the water and toxins.</p>
+                            <p><strong>Step 4:</strong> If performing Vastra Dhauti, carefully swallow the cloth.</p>
+                            <p><strong>Step 5:</strong> Retrieve the cloth by pulling it out gently.</p>
+                            <p><strong>Step 6:</strong> Follow with a light meal and adequate hydration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="dhouthi.jpg" alt="Dhauti Kriya" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Trataka</h2>
+                <p><strong>Description:</strong> Trataka is a practice of focused gazing at a single point to improve concentration and mental stability.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Fixation:</strong> Gazing at a candle flame or another focal point without blinking.</li>
+                        <li><strong>Visualization:</strong> Imagining the flame in the mind after closing the eyes.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Improves concentration and mental stability.</li>
+                        <li>Enhances vision and reduces eye strain.</li>
+                        <li>Promotes a calm and focused mind.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Ensure proper lighting and a safe environment to avoid eye strain. Avoid Trataka if you have eye conditions or sensitivity.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Trataka</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Light a candle and place it at eye level.</p>
+                            <p><strong>Step 2:</strong> Sit comfortably and focus on the flame.</p>
+                            <p><strong>Step 3:</strong> Gaze at the flame without blinking for a few minutes.</p>
+                            <p><strong>Step 4:</strong> Close your eyes and visualize the flame in your mind.</p>
+                            <p><strong>Step 5:</strong> Continue visualization until the image fades.</p>
+                            <p><strong>Step 6:</strong> Open your eyes slowly and relax.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="trataka.jpg" alt="Trataka Kriya" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Basti</h2>
+                <p><strong>Description:</strong> Basti is a cleansing technique that focuses on purifying the large intestine to improve overall digestive health.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Enema:</strong> Using a specific solution to cleanse the large intestine.</li>
+                        <li><strong>Colon Cleansing:</strong> Performing regular colon cleanses to maintain digestive health.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Improves bowel regularity and detoxifies the colon.</li>
+                        <li>Reduces symptoms of constipation and bloating.</li>
+                        <li>Enhances overall digestive health.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Basti should be avoided if you have any gastrointestinal issues. Always consult a healthcare provider before starting.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Basti</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Prepare the enema solution according to guidelines.</p>
+                            <p><strong>Step 2:</strong> Lie on your back or left side comfortably.</p>
+                            <p><strong>Step 3:</strong> Insert the enema nozzle gently into the rectum.</p>
+                            <p><strong>Step 4:</strong> Release the solution slowly into the colon.</p>
+                            <p><strong>Step 5:</strong> Retain the solution for the recommended time.</p>
+                            <p><strong>Step 6:</strong> Empty the bowels and clean yourself thoroughly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="basti.jpg" alt="Basti Kriya" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Nauli</h2>
+                <p><strong>Description:</strong> Nauli involves abdominal manipulation to strengthen the core and improve digestive function.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Abdominal Churning:</strong> Rolling the abdominal muscles to stimulate internal organs.</li>
+                        <li><strong>Vacuum Pose:</strong> Pulling the abdomen inward while holding the breath.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Strengthens the abdominal muscles and improves core stability.</li>
+                        <li>Enhances digestion and eliminates toxins.</li>
+                        <li>Promotes overall abdominal health.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Nauli should be avoided if you have abdominal conditions or recent surgeries. It is important to perform this under supervision initially.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Nauli</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Stand upright with feet slightly apart.</p>
+                            <p><strong>Step 2:</strong> Inhale deeply and hold your breath.</p>
+                            <p><strong>Step 3:</strong> Contract and roll the abdominal muscles from side to side.</p>
+                            <p><strong>Step 4:</strong> Perform the vacuum pose by pulling the abdomen inward.</p>
+                            <p><strong>Step 5:</strong> Exhale and relax.</p>
+                            <p><strong>Step 6:</strong> Repeat as necessary while maintaining proper technique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="nouli.jpg" alt="Nauli Kriya" class="content-image">
+        </div>
+
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Kapalbhati</h2>
+                <p><strong>Description:</strong> Kapalbhati is a breathing technique designed to clear the mind and rejuvenate the brain.</p>
+                <p><strong>Techniques:</strong>
+                    <ul>
+                        <li><strong>Active Exhalation:</strong> Forceful exhalation followed by passive inhalation.</li>
+                        <li><strong>Abdominal Pumping:</strong> Rapid abdominal contractions to expel air.</li>
+                    </ul>
+                </p>
+                <p><strong>Benefits:</strong>
+                    <ul>
+                        <li>Improves lung capacity and oxygenates the blood.</li>
+                        <li>Clears mental fog and enhances cognitive function.</li>
+                        <li>Boosts overall energy levels and vitality.</li>
+                    </ul>
+                </p>
+                <div class="caution">
+                    <strong>Caution:</strong> Avoid Kapalbhati if you have high blood pressure, heart conditions, or respiratory issues. Consult a doctor if you are unsure.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title">Steps to Perform Kapalbhati</div>
+                        <div class="accordion-content">
+                            <p><strong>Step 1:</strong> Sit comfortably with a straight spine.</p>
+                            <p><strong>Step 2:</strong> Inhale deeply through the nose.</p>
+                            <p><strong>Step 3:</strong> Exhale forcefully through the nose, pulling the abdomen in.</p>
+                            <p><strong>Step 4:</strong> Allow the inhalation to occur passively.</p>
+                            <p><strong>Step 5:</strong> Continue the process for several rounds.</p>
+                            <p><strong>Step 6:</strong> Relax and breathe normally after completing the rounds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="kapalbhati.jpg" alt="Kapalbhati Kriya" class="content-image">
+        </div>
+    </section>
+</body>
+</html>

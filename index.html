@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing in Yoga</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #1a1a1a, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            min-height: 200vh;
+            overflow: hidden;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        #sun {
+    position: absolute;
+    bottom: -300px; /* Start from below the viewport */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+    background: radial-gradient(circle, #ffeb3b, #ff9800);
+    border-radius: 50%;
+    animation: rise 20s ease-in-out forwards;
+    box-shadow: 0 0 150px 50px rgba(255, 152, 0, 0.8), 
+                0 0 300px 100px rgba(255, 152, 0, 0.6),
+                0 0 450px 150px rgba(255, 152, 0, 0.4);
+    z-index: 2;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -300px; /* Start from below the viewport */
+    }
+    100% {
+        bottom: 60%; /* Adjust this value to position the sun at the "Welcome to Yoga World" text */
+    }
+}
+
+
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+        }
+
+        img {
+            height: 30px;
+            width: 20px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .nav-menu li {
+            margin: 0 54px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.0em;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #ffeb3b;
+        }
+
+        .logo {
+            width: 40px;
+            height: 30px;
+        }
+
+        .hero-section {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            margin-top: 300px;
+            z-index: 4;
+        }
+
+        .hero-section h1, .hero-section p {
+            margin: 0;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .content-section {
+            position: relative;
+            padding: 50px 20px;
+            z-index: 4;
+            background: transparent;
+            color: #fff;
+        }
+
+        .content-section h2 {
+            margin-top: 50px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            z-index: 4;
+        }
+
+        footer p {
+            margin: 0;
+            padding: 10px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        <div id="sun"></div>
+        <div class="navbar">
+            <ul class="nav-menu">
+                <li><a href="index.html"><img src="yoga_logo.jpg" alt="Yoga Logo" class="logo"></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="asanas.html">Asanas</a></li>
+                <li><a href="pranayama.html">Pranamaya</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="kriyas.html">Kriyas</a></li>
+                <li><a href="DailyChallenge.html">Daily Challenge</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="hero-section">
+            <h1>Welcome to the world of Yoga</h1>
+            <p>Explore various types of yoga, discover poses, and start your journey towards a healthier lifestyle.</p>
+        </div>
+        <div class="content-section">
+            <h2>What is Yoga?</h2>
+            <p>Yoga is an ancient practice that involves physical postures, breath control, and meditation. It aims to improve flexibility, strength, and overall well-being. Yoga has been practiced for thousands of years and is known for its numerous benefits, including stress reduction, increased focus, and better physical health.</p>
+
+            <h2>Types of Yoga</h2>
+            <ul>
+                <li><strong>Hatha Yoga:</strong> A gentle introduction to the most basic yoga postures.</li>
+                <li><strong>Vinyasa Yoga:</strong> A series of poses that flow smoothly into one another.</li>
+                <li><strong>Ashtanga Yoga:</strong> A rigorous style of yoga that follows a specific sequence of postures and is similar to vinyasa yoga.</li>
+                <li><strong>Power Yoga:</strong> A faster, high-intensity practice that builds muscle.</li>
+                <li><strong>Bikram Yoga:</strong> A series of 26 challenging poses practiced in a room heated to a high temperature.</li>
+                <li><strong>Yin Yoga:</strong> A slow-paced style of yoga with postures held for longer periods of time.</li>
+                <li><strong>Kundalini Yoga:</strong> Focuses on awakening the energy at the base of the spine.</li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2024 Growing in Yoga. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Include Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://threejs.org/examples/js/geometries/TextGeometry.js"></script>
+    <script>
+        // Setup Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+    
+        camera.position.z = 100; 
+
+        const light = new THREE.PointLight(0xffffff, 1.5, 100);
+        light.position.set(50, 50, 50);
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        
+        const particleCount = 1000;
+        const particles = new THREE.BufferGeometry();
+        const positions = [];
+        const velocities = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            positions.push((Math.random() * 200 - 100));
+            positions.push((Math.random() * 200 - 100));
+            positions.push((Math.random() * 200 - 100));
+            
+            velocities.push((Math.random() - 0.5) * 0.05);
+            velocities.push((Math.random() - 0.5) * 0.05);
+            velocities.push((Math.random() - 0.5) * 0.05);
+        }
+
+        particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        particles.setAttribute('velocity', new THREE.Float32BufferAttribute(velocities, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.7 });
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+
+        // Load Font and Create 3D Text
+        const loader = new THREE.FontLoader();
+        loader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function (font) {
+            const texts = ['Asanas', 'Pranamaya', 'Meditation', 'Kriyas'];
+            const textMeshes = [];
+            const radius = 110; // Radius of revolution
+            const speed = 0.001; // Speed of revolution
+            let angle = 0;
+
+            texts.forEach((text, index) => {
+                const textGeometry = new THREE.TextGeometry(text, {
+                    font: font,
+                    size: 5,
+                    height: 1,
+                });
+                const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow color
+                const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+                // Create a parent object for rotating the text
+                const parent = new THREE.Object3D();
+                parent.add(textMesh);
+                scene.add(parent);
+
+                // Position the parent object
+                parent.position.set(radius * Math.cos(index * Math.PI / 2), 0, radius * Math.sin(index * Math.PI / 2));
+                textMeshes.push(parent);
+            });
+
+            // Rotate the parent object
+            function rotateTexts() {
+                const deltaAngle = 0.001; // Speed of revolution
+
+                textMeshes.forEach((textMesh, index) => {
+                    angle += deltaAngle;
+                    textMesh.position.x = radius * Math.cos(angle + index * Math.PI / 2);
+                    textMesh.position.z = radius * Math.sin(angle + index * Math.PI / 2);
+                });
+            }
+
+            // Animate Scene
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Update particles
+                updateParticles();
+
+                // Rotate texts around the sun
+                rotateTexts();
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        });
+
+        // Animate Particles
+        function updateParticles() {
+            const positions = particles.attributes.position.array;
+            const velocities = particles.attributes.velocity.array;
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] += velocities[i * 3];
+                positions[i * 3 + 1] += velocities[i * 3 + 1];
+                positions[i * 3 + 2] += velocities[i * 3 + 2];
+
+                if (positions[i * 3] > 100 || positions[i * 3] < -100) velocities[i * 3] *= -1;
+                if (positions[i * 3 + 1] > 100 || positions[i * 3 + 1] < -100) velocities[i * 3 + 1] *= -1;
+                if (positions[i * 3 + 2] > 100 || positions[i * 3 + 2] < -100) velocities[i * 3 + 2] *= -1;
+            }
+
+            particles.attributes.position.needsUpdate = true;
+        }
+    </script>
+</body>
+</html>

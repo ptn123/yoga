@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background: radial-gradient(circle at center, #1a1a2e, #16213e);
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #00a8ff, transparent 70%), url('nature.jpg');
+    background-size: cover;
+    background-blur: 5px;
+    z-index: -1; /* Ensure background is behind all other content */
+    animation: rotateBackground 60s linear infinite; /* Optional animation for a dynamic effect */
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffb347;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Challenge container */
+.challenge-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+}
+
+.challenge-illusion {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Challenge content styling */
+.challenge-content {
+    position: relative;
+    z-index: 1;
+}
+
+#challenge-display {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ff7675;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styling */
+#view-pose-btn {
+    background: #00a8ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#view-pose-btn:hover {
+    background: #0097e6;
+    transform: scale(1.1);
+}
+
+/* Pose image styling */
+#pose-image-container {
+    margin-top: 20px;
+    transform: scale(0);
+    transition: transform 0.5s ease, background 0.5s ease;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+}
+#pose-image-container.active {
+    transform: scale(1);
+    background: linear-gradient(135deg, #e1eec3, #f05053);
+}
+#pose-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+#pose-details {
+    margin-top: 20px;
+    text-align: left;
+    color: #f5f6fa;
+}
+
+#pose-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffb347;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#pose-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    white-space: pre-line; /* To preserve line breaks */
+}
+#pose-details {
+    margin-top: 20px;
+    text-align: left;
+    color: #f5f6fa;
+}
+
+#pose-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffb347;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#pose-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    white-space: pre-line;
+}
+
+#upload-photo-btn {
+    background: #4cd137;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+#upload-photo-btn:hover {
+    background: #44bd32;
+    transform: scale(1.1);
+}
+
+#user-photo-container {
+    margin-top: 20px;
+    text-align: center;
+    display: none; 
+}
+
+#user-photo {
+    max-width: 100%;
+    max-height: 50vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}

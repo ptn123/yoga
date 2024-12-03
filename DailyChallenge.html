@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge</title>
+    <link rel="stylesheet" href="DailyChallenge.css">
+    <script src="DailyChallenge.js" defer></script>
+</head>
+<body>
+    <div class="challenge-container">
+        <div class="challenge-illusion">
+            <h1>Today's Yoga Challenge</h1>
+            <div class="challenge-content">
+                <p id="challenge-display"></p>
+                <button id="view-pose-btn">Click to See the Pose</button>
+                <div id="pose-image-container" style="display:none;">
+                    <img id="pose-image" src="" alt="Yoga Pose">
+                </div>
+                <div id="pose-details">
+                    <h2>Steps to do  the Pose</h2>
+                    <p id="pose-steps"></p>
+                    <h2>Benefits of Doing This Pose</h2>
+                    <p id="pose-benefits"></p>
+                </div>
+                <button id="upload-photo-btn">Upload Your Photo</button>
+                <input type="file" id="photo-input" accept="image/*" style="display:none;">
+                <div id="user-photo-container" style="display:none;">
+                    <img id="user-photo" src="" alt="Your Pose">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
